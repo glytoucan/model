@@ -15,6 +15,9 @@ public interface GlycanQuerySpec {
 	public static final String CONTEXT_PATH = "CONTEXT_PATH";
 	public static final String SEQUENCE = "SEQUENCE";
 	public static final String LIST_CMD = "/list";
+	public static final String PAYLOAD = "payload";
+	public static final String LIMIT = "limit";
+	public static final String OFFSET = "offset";
 		
     public Map<String, Object> getListStructures(Map<String, Object> gmap);
 }
