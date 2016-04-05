@@ -1,0 +1,35 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:gtc="http://core.glytoucan.org/" targetNamespace="http://core.glytoucan.org/"
+	elementFormDefault="qualified">
+
+	<xs:complexType name="trivialName">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" />
+			<xs:element name="notationSchema" type="gtc:notationSchema" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="log">
+		<xs:sequence>
+			<xs:element name="description" type="xs:string" />
+			<xs:element name="status" type="gtc:status" />
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:simpleType name="notationSchema">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="BCSDB" />
+			<xs:enumeration value="MSDB" />
+			<xs:enumeration value="CARBBANK" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="status">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="SUCCESS" />
+			<xs:enumeration value="WARNING" />
+			<xs:enumeration value="ERROR" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
