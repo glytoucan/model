@@ -6,10 +6,26 @@
 	<groupId>org.glytoucan</groupId>
 	<artifactId>model</artifactId>
 	<version>0.0.2-SNAPSHOT</version>
+  <packaging>jar</packaging>
+	<parent>
+		<groupId>org.glytoucan</groupId>
+		<artifactId>pom-site</artifactId>
+		<version>0.24-SNAPSHOT</version>
+		<relativePath>../pom-site/pom.xml</relativePath>
+	</parent>
 
-	<properties>
-		<java.version>1.7</java.version>
-	</properties>
+  <properties>
+    <java.version>1.7</java.version>
+    <changelog.fileUri>${changelog.github.fileUri}</changelog.fileUri>
+    <changelog.revision.fileUri>${changelog.revision.github.fileUri}</changelog.revision.fileUri>
+    <project.scm.url>https://github.com/glytoucan/${project.artifactId}</project.scm.url>
+    <cobertura.base.package>${project.groupId}.${project.artifactId}</cobertura.base.package>
+    <inceptionYear>2016</inceptionYear>
+    <repository.domain>nexus.glycoinfo.org/content/sites/project/glytoucan/${project.artifactId}</repository.domain>
+    <repository.user>glytoucan</repository.user>
+    <repository.name>${project.artifactId}</repository.name>
+    <googleAnalyticsAccountId>UA-54566807-1</googleAnalyticsAccountId>
+  </properties>
 
 	<dependencies>
 		<dependency>

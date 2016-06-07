@@ -2,7 +2,7 @@ package org.glytoucan.model.spec;
 
 import java.util.Map;
 
-public interface GlycanQuerySpec {
+public interface GlycanClientRegisterSpec {
 
 	public static final String USERNAME = "USERNAME";
 	public static final String MESSAGE = "MESSAGE";
@@ -14,10 +14,12 @@ public interface GlycanQuerySpec {
 	public static final String REGISTRATION = "REGISTRATION";
 	public static final String CONTEXT_PATH = "CONTEXT_PATH";
 	public static final String SEQUENCE = "SEQUENCE";
+	public static final String CONTRIBUTOR_ID = "CONTRIBUTOR_ID";
+	public static final String API_KEY = "API_KEY";
+	public static final String REGISTER_CMD = "/register";
 	public static final String LIST_CMD = "/list";
-	public static final String PAYLOAD = "payload";
-	public static final String LIMIT = "limit";
-	public static final String OFFSET = "offset";
+	public static final String REGISTER_WITH_ID_CMD = "/registerWithId";
+	public static final String PUBLIC_DATABASE_STRUCTURE_ID = "PUBLIC_DATABASE_STRUCTURE_ID";
 		
-    public Map<String, Object> getListStructures(Map<String, Object> gmap);
+    Map<String, Object> registerStructure(Map<String, Object> map);
 }
