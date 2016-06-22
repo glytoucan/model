@@ -35,6 +35,9 @@ public interface GlycanClientQuerySpec {
 		
     public Map<String, Object> getListStructures(Map<String, Object> gmap);
 
-    String getImage(Map<String, Object> data)
+    String getImageBase64(Map<String, Object> data)
+        throws IOException, NoSuchAlgorithmException, KeyStoreException, KeyManagementException;
+
+    byte[] getImage(Map<String, Object> data)
         throws IOException, NoSuchAlgorithmException, KeyStoreException, KeyManagementException;
 }
