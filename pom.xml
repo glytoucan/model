@@ -2,16 +2,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
-	<groupId>org.glytoucan</groupId>
 	<artifactId>model</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
-  <packaging>jar</packaging>
+    <packaging>jar</packaging>
+
 	<parent>
 		<groupId>org.glytoucan</groupId>
-		<artifactId>pom-site</artifactId>
-		<version>0.24-SNAPSHOT</version>
-		<relativePath>../pom-site/pom.xml</relativePath>
+		<artifactId>pom</artifactId>
+		<version>1.2.4-TOCO-SNAPSHOT</version>
 	</parent>
 
   <properties>
@@ -77,24 +74,25 @@
 					<target>1.7</target>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>jaxb2-maven-plugin</artifactId>
-				<version>1.6</version>
-				<executions>
-					<execution>
-						<id>xjc</id>
-						<goals>
-							<goal>xjc</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<schemaDirectory>${project.basedir}/src/main/resources/</schemaDirectory>
-					<outputDirectory>${project.build.directory}/generated-source/java</outputDirectory>
-					<clearOutputDir>false</clearOutputDir>
-				</configuration>
-			</plugin>
+			<!--  cant get this to work as a jar because the soap web service hosts the wsdl which is what the client uses.  easiest way to synchronize client and server -->
+<!-- 			<plugin> -->
+<!-- 				<groupId>org.codehaus.mojo</groupId> -->
+<!-- 				<artifactId>jaxb2-maven-plugin</artifactId> -->
+<!-- 				<version>1.6</version> -->
+<!-- 				<executions> -->
+<!-- 					<execution> -->
+<!-- 						<id>xjc</id> -->
+<!-- 						<goals> -->
+<!-- 							<goal>xjc</goal> -->
+<!-- 						</goals> -->
+<!-- 					</execution> -->
+<!-- 				</executions> -->
+<!-- 				<configuration> -->
+<!-- 					<schemaDirectory>${project.basedir}/src/main/resources/</schemaDirectory> -->
+<!-- 					<outputDirectory>${project.build.directory}/generated-source/java</outputDirectory> -->
+<!-- 					<clearOutputDir>false</clearOutputDir> -->
+<!-- 				</configuration> -->
+<!-- 			</plugin> -->
 		</plugins>
 	</build>
 

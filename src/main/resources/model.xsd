@@ -17,10 +17,123 @@
 		</xs:restriction>
 	</xs:simpleType>
 
+	<xs:simpleType name="classType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="GLYCOSEQUENCE_WURCS" />
+			<xs:enumeration value="GLYCOSEQUENCE_GLYCOCT" />
+			<xs:enumeration value="GLYCOSEQUENCE_IUPAC_EXTENDED" />
+			<xs:enumeration value="GLYCOSEQUENCE" />
+			<xs:enumeration value="MONOSACCHARIDE" />
+			<xs:enumeration value="MOTIF" />
+		</xs:restriction>
+	</xs:simpleType>
+
 	<xs:complexType name="responseMessage">
 		<xs:sequence>
 			<xs:element name="message" type="xs:string" />
 			<xs:element name="errorCode" type="xs:integer" />
 		</xs:sequence>
 	</xs:complexType>
+
+	<xs:element name="aliasRegisterRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="trivialName" type="gtc:trivialName" />
+				<xs:element name="accessionNumber" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="aliasRegisterResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="trivialName" type="gtc:trivialName" />
+				<xs:element name="accessionNumber" type="xs:string" />
+				<xs:element name="responseMessage" type="gtc:responseMessage" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="glycoSequenceIdSearchRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="accessionNumber" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="glycoSequenceTextSearchRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="sequence" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="glycoSequenceRegisterRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="sequence" type="xs:string" />
+				<xs:element name="userId" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="glycoSequenceSearchResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="sequence" type="xs:string" />
+				<xs:element name="accessionNumber" type="xs:string" />
+				<xs:element name="image" type="xs:string" />
+				<xs:element name="responseMessage" type="gtc:responseMessage" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="glycoSequenceDetailRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="accessionNumber" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="glycoSequenceDetailResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="sequence" type="xs:string" />
+				<xs:element name="mass" type="xs:string" />
+				<xs:element name="iupac" type="xs:string" />
+				<xs:element name="description" type="xs:string" />
+				<xs:element name="accessionNumber" type="xs:string" />
+				<xs:element name="responseMessage" type="gtc:responseMessage" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="glycoSequenceCountRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="type" type="gtc:classType" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="glycoSequenceCountResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="count" type="xs:string" />
+				<xs:element name="responseMessage" type="gtc:responseMessage" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="userRegistrationRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="givenName" type="xs:string" />
+				<xs:element name="email" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
 </xs:schema>

@@ -14,8 +14,6 @@ import java.util.Map;
  */
 public interface GlycanClientQuerySpec {
 
-	public static final String USERNAME = "USERNAME";
-	public static final String MESSAGE = "MESSAGE";
 	public static final String CONTENT_TYPE = "CONTENT_TYPE";
 	public static final String MEDIA_TYPE = "MEDIA_TYPE";
 	public static final String AUTHORIZATION_HEADER = "Authorization";
