@@ -15,8 +15,10 @@ public interface GlycanClientRegisterSpec {
 	public static final String REGISTER_CMD = "/register";
 	public static final String LIST_CMD = "/list";
 	public static final String REGISTER_WITH_ID_CMD = "/registerWithId";
+  public static final String ACCESSION_NUMBER = "ACCESSION_NUMBER";
 	public static final String PUBLIC_DATABASE_STRUCTURE_ID = "PUBLIC_DATABASE_STRUCTURE_ID";
   public static final String HOSTNAME = "HOSTNAME";
+  public static final Object REMOVE_PARTNER_ACCESSION_CMD = "/removePartnerAccession";
 		
-    Map<String, Object> registerStructure(Map<String, Object> map);
+  Map<String, Object> registerStructure(Map<String, Object> map);
 }

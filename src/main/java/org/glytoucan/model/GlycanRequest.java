@@ -2,7 +2,7 @@ package org.glytoucan.model;
 
 public class GlycanRequest {
 	
-	String sequence, publicDatabaseStructureId;
+	String sequence, publicDatabaseStructureId, accessionNumber;
 
 	public String getSequence() {
 		return sequence;
@@ -19,4 +19,12 @@ public class GlycanRequest {
 	public void setPublicDatabaseStructureId(String publicDatabaseStructureId) {
 		this.publicDatabaseStructureId = publicDatabaseStructureId;
 	}
+
+  public String getAccessionNumber() {
+    return accessionNumber;
+  }
+
+  public void setAccessionNumber(String accessionNumber) {
+    this.accessionNumber = accessionNumber;
+  }
 }
