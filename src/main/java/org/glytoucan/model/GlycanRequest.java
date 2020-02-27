@@ -1,8 +1,16 @@
 package org.glytoucan.model;
 
 public class GlycanRequest {
-	
-	String sequence, publicDatabaseStructureId, accessionNumber;
+
+	String sequence, format, publicDatabaseStructureId, accessionNumber;
+
+	public String getFormat() {
+		return format;
+	}
+
+	public void setFormat(String format) {
+		this.format = format;
+	}
 
 	public String getSequence() {
 		return sequence;
